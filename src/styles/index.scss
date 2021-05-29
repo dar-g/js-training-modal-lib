@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background:
+        linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    font-weight: 300;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 500px;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+
+    &:active{
+        background-color: #cbcbcb;
+    }
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-wrapper {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .6);
+
+    .cancel-btn {
+        color: #1dce94;
+        background: #fff;
+        border: 1px solid #1dce94;
+    }
+}
+
+.modal-wrapper.show {
+    display: flex;
+}
+
+.message-wrapper {
+    text-align: center;
+}
