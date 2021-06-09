@@ -4,24 +4,26 @@ html, body {
     font-size: 100%;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background:
-        linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    background: blue;
+    //background:
+    //    linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(83, 14, 171,1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
 button {
     cursor: pointer;
     outline: none;
-    font-weight: 300;
     background: rgba(0, 0, 0, .6);
     border: none;
-    border-radius: 500px;
-    color: white;
-    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px 15px;
     transition: all 0.3s;
 
-    &:active{
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &:active {
         background-color: #cbcbcb;
     }
 }
@@ -34,27 +36,56 @@ button {
     justify-content: center;
 }
 
-.modal-wrapper {
+.my-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+.my-modal.show {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal {
     display: none;
+    position: relative;
     flex-direction: column;
-    position: absolute;
-    top: 45vh;
-    left: 45vw;
     background-color: #fff;
     padding: 30px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, .6);
 
     .cancel-btn {
-        color: #1dce94;
-        background: #fff;
-        border: 1px solid #1dce94;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #000;
+        font-weight: 700;
+        background: transparent;
+
+        &:hover {
+            transform: scale(1.5);
+        }
     }
 }
 
-.modal-wrapper.show {
+.my-modal.show .modal {
     display: flex;
+}
+
+.title-wrapper {
+    font-size: 1.5em;
 }
 
 .message-wrapper {
     text-align: center;
 }
+
+.title-wrapper,
+.message-wrapper {
+    margin-bottom: 15px;
+}
+
+

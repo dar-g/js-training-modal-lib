@@ -24,32 +24,39 @@
 <body>
 <main class="main">
     <button id="triggerBtn" class="trigger-btn">Show modal</button>
-
-    <!--        <div id="modal" class="modal">-->
-    <!--            <div id="title" class="title-wrapper"></div>-->
-    <!--            <div id="message" class="message-wrapper"></div>-->
-    <!--            <div class="btn-wrapper">-->
-    <!--                <button id="okBtn" class="ok-btn">Ok</button>-->
-    <!--                <button id="cancelBtn" class="cancel-btn">x</button>-->
-    <!--            </div>-->
-    <!--        </div>-->
 </main>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        console.log('Dasha modal', dashaModal);
+        // console.log('Dasha modal', dashaModal);
 
-        // const newModal = new dashaModal('Title of the modal', 'Content of the message');
         const newModal = new dashaModal({
             title: 'Modal title',
-            message: 'Something important to inform user'
+            message: 'Something important to inform user',
+            // onConfirm: (e) => {
+            //     e.stopPropagation();
+            //     console.log('Enter on confirm function');
+            //     // debugger;
+            //     const yellowBody = document.body;
+            //     yellowBody.style.backgroundColor = 'yellow';
+            // }
+            // onConfirm: function makeYellow(e) {
+                // e.stopPropagation();
+                // document.body.style.backgroundColor = 'yellow';
+            // }
         });
 
-        newModal.create();
+        newModal.renderModal();
 
         const trigger = document.getElementById("triggerBtn");
 
         trigger.onclick = function() {
             newModal.showModal();
+        }
+
+        const closeBtn = document.body.getElementsByClassName('cancel-btn')[0];
+
+        closeBtn.onclick = function () {
+            newModal.hideModal();
         }
     });
 </script>
