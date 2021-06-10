@@ -54,10 +54,19 @@
         }
 
         const closeBtn = document.body.getElementsByClassName('cancel-btn')[0];
+        const modalW = document.body.getElementsByClassName('my-modal')[0];
 
-        closeBtn.onclick = function () {
-            newModal.hideModal();
-        }
+        closeBtn.addEventListener('click', () => newModal.hideModal());
+
+        document.addEventListener('keyup', (e) => {
+            if (e.key === 'Escape') {
+                newModal.hideModal();
+            }
+        });
+
+        // closeBtn.onclick = function () {
+        //     newModal.hideModal();
+        // }
     });
 </script>
 </body>

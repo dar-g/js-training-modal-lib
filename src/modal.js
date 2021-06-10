@@ -28,9 +28,6 @@ class MyModal {
         // okBtn.addEventListener('click', () => {
         //     this.onConfirm();
         // });
-
-        // const cancelBtn = document.body.getElementsByClassName('cancel-btn')[0];
-        // cancelBtn.addEventListener('click', );
     }
 
     showModal() {
