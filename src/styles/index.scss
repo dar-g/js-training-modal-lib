@@ -4,9 +4,7 @@ html, body {
     font-size: 100%;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background: blue;
-    //background:
-    //    linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(83, 14, 171,1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: #414181;
 }
 
 button {
@@ -57,7 +55,16 @@ button {
     background-color: #fff;
     padding: 30px;
 
-    .cancel-btn {
+    .content-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .btn-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .close-btn {
         position: absolute;
         top: 10px;
         right: 10px;
